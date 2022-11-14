@@ -1,6 +1,7 @@
 const URL = `https://fathomless-shelf-54969.herokuapp.com`;
 const apiKey = `solaris-vKkkQHqQboi7c6JF`;
 const main = document.querySelector(`main`);
+const header = document.querySelector(`header`);
 
 let buttonSun = document.querySelector(`.sun`);
 let buttonMercury = document.querySelector(`.mercury`);
@@ -11,7 +12,7 @@ let buttonJuiter = document.querySelector(`.jupiter`);
 let buttonSaturn = document.querySelector(`.saturn`);
 let buttonUranus = document.querySelector(`.uranus`);
 let buttonNeptune = document.querySelector(`.neptune`);
-let resetBtn = document.querySelector(`.backToPage`);
+
 
 let solarSystem = ``;
 let el = ``;
@@ -24,15 +25,15 @@ async function getKey() {
     const resp = await fetch(`${URL}/keys`, { method: 'POST' });
     const data = await resp.json(); 
     console.log(data);
-    // return data.key **Kolla mer på exemplet Johan gick igenom  //{ key: 'solaris-vKkkQHqQboi7c6JF' }
+    return data.key
 }
 // Get planet info, an array.
 async function getPlanetInfo(planet) {
-    //const key = await fetchKey(); **Kolla närmare på exemplet Johan gick igenom 
-    const resp = await fetch(`${URL}/bodies`, { method: 'GET', headers: {'x-zocom': 'solaris-vKkkQHqQboi7c6JF'} });
+    const key = await getKey();
+    const resp = await fetch(`${URL}/bodies`, { method: 'GET', headers: {'x-zocom': key} });
     
     solarSystem = await resp.json();
-    console.log(`Ge inte upp, du kan det här`);
+    console.log(`hej`);
 
     let Name = solarSystem.bodies[planet].name;
     let LatinName = solarSystem.bodies[planet].latinName; 
@@ -41,30 +42,32 @@ async function getPlanetInfo(planet) {
     let Distance = solarSystem.bodies[planet].distance;
     let MaxTemp = solarSystem.bodies[planet].temp.day;
     let MinTemp = solarSystem.bodies[planet].temp.night;
-    let Moons = solarSystem.bodies[planet].moons;
-    
+    let Moons = solarSystem.bodies[planet].moons.join(`, `);
+
+
+    header.innerHTML = ``;
+
+
     main.innerHTML = ``;
     el = `
-        <main> 
             <h1>${Name}</h1>
             <h4>${LatinName}</h4>
-            <p class="Desc">${Desc}</p>
-            <p class="Circumference">OMKRETS<br>${Circumference} Km</p>
-            <p class="Distance">KM FRÅN SOLEN<br>${Distance} Km</p>
-            <p class="MaxTemp">MAX TEMPERATUR<br>${MaxTemp} C</p>
-            <p class="MinTemp">MIN TEMPERATUR<br>${MinTemp} C</p>
-            <p class="Moons">MÅNAR<br>${Moons}</p>
-        </main>
+            <p class="desc">${Desc}</p>
+            <p class="circumference">OMKRETS<br>${Circumference} Km</p>
+            <p class="distance">KM FRÅN SOLEN<br>${Distance} Km</p>
+            <p class="maxTemp">MAX TEMPERATUR<br>${MaxTemp} C</p>
+            <p class="minTemp">MIN TEMPERATUR<br>${MinTemp} C</p>
+            <p class="moons">MÅNAR<br>${Moons}</p>
+            <button class="backToPage">Tillbaka till Solsystemet</button>
     `
     console.log(`Solarsystem work!`);
     main.insertAdjacentHTML(`beforeend`, el);
+    let resetBtn = document.querySelector(`.backToPage`);
+    resetBtn.addEventListener('click',()=> {
+        location.reload()
+        console.log('resetBtn funkar');
+    })
 }
-
-/*
-getKey();
-getPlanetInfo();
-*/
-
 
 //Enum 
 const Planets = {
@@ -82,7 +85,6 @@ const Planets = {
 buttonSun.addEventListener(`click`, function(){
     getPlanetInfo(Planets.sun);
     console.log(`sol knappen funkar!`);
-    resetBtn.style.display = `flex`
 })
 buttonMercury.addEventListener(`click`, function(){
     getPlanetInfo(Planets.mercury);
@@ -109,8 +111,3 @@ buttonNeptune.addEventListener(`click`, function(){
     getPlanetInfo(Planets.neptune);
 })
 
-
-resetBtn.addEventListener('click',()=> {
-    console.log('yo');
-    location.reload()
-})
