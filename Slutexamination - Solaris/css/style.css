@@ -127,3 +127,6 @@ h4 {
     border-radius: 50%;
     border-style: none;
 }
+.BackToPage {
+    display: none;
+}

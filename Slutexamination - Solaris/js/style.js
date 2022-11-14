@@ -2,18 +2,21 @@ const URL = `https://fathomless-shelf-54969.herokuapp.com`;
 const apiKey = `solaris-vKkkQHqQboi7c6JF`;
 const main = document.querySelector(`main`);
 
-let buttonSun = document.querySelector(`.Sun`);
-let buttonMercury = document.querySelector(`.Mercury`);
-let buttonVenus = document.querySelector(`.Venus`);
-let buttonEarth = document.querySelector(`.Earth`);
-let buttonMars = document.querySelector(`.Mars`);
-let buttonJuiter = document.querySelector(`.Jupiter`);
-let buttonSaturn = document.querySelector(`.Saturn`);
-let buttonUranus = document.querySelector(`.Uranus`);
-let buttonNeptune = document.querySelector(`.Neptune`);
+let buttonSun = document.querySelector(`.sun`);
+let buttonMercury = document.querySelector(`.mercury`);
+let buttonVenus = document.querySelector(`.venus`);
+let buttonEarth = document.querySelector(`.earth`);
+let buttonMars = document.querySelector(`.mars`);
+let buttonJuiter = document.querySelector(`.jupiter`);
+let buttonSaturn = document.querySelector(`.saturn`);
+let buttonUranus = document.querySelector(`.uranus`);
+let buttonNeptune = document.querySelector(`.neptune`);
+let resetBtn = document.querySelector(`.backToPage`);
 
 let solarSystem = ``;
 let el = ``;
+
+
 
 
 //ApiKey
@@ -33,7 +36,8 @@ async function getPlanetInfo(planet) {
 
     let Name = solarSystem.bodies[planet].name;
     let LatinName = solarSystem.bodies[planet].latinName; 
-    let Desc = solarSystem.bodies[planet].desc;    let Circumference = solarSystem.bodies[planet].circumference;
+    let Desc = solarSystem.bodies[planet].desc;    
+    let Circumference = solarSystem.bodies[planet].circumference;
     let Distance = solarSystem.bodies[planet].distance;
     let MaxTemp = solarSystem.bodies[planet].temp.day;
     let MinTemp = solarSystem.bodies[planet].temp.night;
@@ -64,46 +68,49 @@ getPlanetInfo();
 
 //Enum 
 const Planets = {
-        Sun: 0,
-        Mercury: 1,
-        Venus: 2,
-        Earth: 3,
-        Mars: 4,
-        Jupiter: 5,
-        Saturn: 6,
-        Uranus: 7,
-        Neptune: 8,
+        sun: 0,
+        mercury: 1,
+        venus: 2,
+        earth: 3,
+        mars: 4,
+        jupiter: 5,
+        saturn: 6,
+        uranus: 7,
+        neptune: 8,
 }
 
 buttonSun.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Sun);
+    getPlanetInfo(Planets.sun);
     console.log(`sol knappen funkar!`);
+    resetBtn.style.display = `flex`
 })
 buttonMercury.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Mercury);
+    getPlanetInfo(Planets.mercury);
 })
 buttonVenus.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Venus);
+    getPlanetInfo(Planets.venus);
 })
 buttonEarth.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Earth);
+    getPlanetInfo(Planets.earth);
 })
 buttonMars.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Mars);
+    getPlanetInfo(Planets.mars);
 })
 buttonJuiter.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Jupiter);
+    getPlanetInfo(Planets.jupiter);
 })
 buttonSaturn.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Saturn);
+    getPlanetInfo(Planets.saturn);
 })
 buttonUranus.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Uranus);
+    getPlanetInfo(Planets.uranus);
 })
 buttonNeptune.addEventListener(`click`, function(){
-    getPlanetInfo(Planets.Neptune);
+    getPlanetInfo(Planets.neptune);
 })
 
 
-
-
+resetBtn.addEventListener('click',()=> {
+    console.log('yo');
+    location.reload()
+})
