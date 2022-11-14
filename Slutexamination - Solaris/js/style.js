@@ -13,27 +13,25 @@ let buttonSaturn = document.querySelector(`.saturn`);
 let buttonUranus = document.querySelector(`.uranus`);
 let buttonNeptune = document.querySelector(`.neptune`);
 
+//let asidePlanet = document.querySelector(`.one`)
+
 
 let solarSystem = ``;
 let el = ``;
 
 
-
-
-//ApiKey
 async function getKey() {
     const resp = await fetch(`${URL}/keys`, { method: 'POST' });
     const data = await resp.json(); 
     console.log(data);
     return data.key
 }
-// Get planet info, an array.
 async function getPlanetInfo(planet) {
     const key = await getKey();
     const resp = await fetch(`${URL}/bodies`, { method: 'GET', headers: {'x-zocom': key} });
-    
+
     solarSystem = await resp.json();
-    console.log(`hej`);
+    console.log(solarSystem);
 
     let Name = solarSystem.bodies[planet].name;
     let LatinName = solarSystem.bodies[planet].latinName; 
@@ -44,24 +42,33 @@ async function getPlanetInfo(planet) {
     let MinTemp = solarSystem.bodies[planet].temp.night;
     let Moons = solarSystem.bodies[planet].moons.join(`, `);
 
-
     header.innerHTML = ``;
-
-
     main.innerHTML = ``;
     el = `
+        <figure class="one"></figure>
+        <figure class="two"></figure>
+        <figure class="three"></figure>
+        <main>
             <h1>${Name}</h1>
             <h4>${LatinName}</h4>
             <p class="desc">${Desc}</p>
+            <p class="desc">${Desc}</p>
+            <hr class="hr1">
             <p class="circumference">OMKRETS<br>${Circumference} Km</p>
             <p class="distance">KM FRÅN SOLEN<br>${Distance} Km</p>
             <p class="maxTemp">MAX TEMPERATUR<br>${MaxTemp} C</p>
             <p class="minTemp">MIN TEMPERATUR<br>${MinTemp} C</p>
+            <hr class="hr2">
             <p class="moons">MÅNAR<br>${Moons}</p>
-            <button class="backToPage">Tillbaka till Solsystemet</button>
-    `
+            <footer>
+            <button class="backToPage">Tillbaka</button>
+            </footer>  
+        </main> 
+            `
     console.log(`Solarsystem work!`);
     main.insertAdjacentHTML(`beforeend`, el);
+
+
     let resetBtn = document.querySelector(`.backToPage`);
     resetBtn.addEventListener('click',()=> {
         location.reload()
