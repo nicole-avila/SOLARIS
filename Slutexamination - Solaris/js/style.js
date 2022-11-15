@@ -10,12 +10,10 @@ let buttonEarth = document.querySelector(`.earth`);
 let buttonMars = document.querySelector(`.mars`);
 let buttonJuiter = document.querySelector(`.jupiter`);
 let buttonSaturn = document.querySelector(`.saturn`);
+let buttonSaturnR = document.querySelector(`.saturnRing`);
 let buttonUranus = document.querySelector(`.uranus`);
 let buttonNeptune = document.querySelector(`.neptune`);
-
 //let asidePlanet = document.querySelector(`.one`)
-
-
 let solarSystem = ``;
 let el = ``;
 
@@ -40,30 +38,32 @@ async function getPlanetInfo(planet) {
     let Distance = solarSystem.bodies[planet].distance;
     let MaxTemp = solarSystem.bodies[planet].temp.day;
     let MinTemp = solarSystem.bodies[planet].temp.night;
-    let Moons = solarSystem.bodies[planet].moons;
-
+    let Moons = solarSystem.bodies[planet].moons.join(`, `);
+    
     header.innerHTML = ``;
     main.innerHTML = ``;
     el = `
-        <figure class="one"></figure>
-        <figure class="two"></figure>
-        <figure class="three"></figure>
+    <figure class="starOne"></figure> <figure class="starTwo"></figure> <figure class="starThree"></figure> <figure class="starFour"></figure> <figure class="starFive"></figure> <figure class="starSix"></figure> <figure class="starSeven"></figure> <figure class="starEight"></figure> <figure class="starNine"></figure> <figure class="starTen"></figure> <figure class="starEleven"></figure> <figure class="starTwelve"></figure>
+    <figure class="starThirteen"></figure> <figure class="starFourteen"></figure> <figure class="starFifteen"></figure> <figure class="starSixteen"></figure> <figure class="starSeventeen"></figure> <figure class="starEighteen"></figure> <figure class="starNineteen"></figure> <figure class="starTwenty"></figure> <figure class="starTwentyOne"></figure> <figure class="starTwentyTwo"></figure> <figure class="starTwetyThree"></figure> <figure class="starTwentyFour"></figure>
+    <figure class="planetAside-one"></figure>
+        <figure class="planetAside-two"></figure>
+        <figure class="planetAside-three"></figure>
         <main>
             <h1>${Name}</h1>
             <h4>${LatinName}</h4>
             <p class="desc">${Desc}</p>
-            <hr class="hr1">
+                <hr class="hr1">
             <h3 class="circumference-header">OMKRETS</h3>
-            <p class="circumference">${Circumference} Km</p>
+                <p class="circumference">${Circumference} Km</p>
             <h3 class="distance-header">KM FRÅN SOLEN</h3>
-            <p class="distance">${Distance} Km</p>
+                <p class="distance">${Distance} Km</p>
             <h3 class="maxTemp-header">MAX TEMPERATUR</h3>
-            <p class="maxTemp">${MaxTemp} C</p>
+                <p class="maxTemp">${MaxTemp} C</p>
             <h3 class="minTemp-header">MIN TEMPERATUR</h3>
-            <p class="minTemp">${MinTemp} C</p>
-            <hr class="hr2">    
+                <p class="minTemp">${MinTemp} C</p>
+                <hr class="hr2">   
             <h3 class="moons-header">MÅNAR</h3>
-            <p class="moons">${Moons}</p>
+                <p class="moons">${Moons}</p>
             <footer>
             <button class="backToPage">Tillbaka</button>
             </footer>  
@@ -72,15 +72,13 @@ async function getPlanetInfo(planet) {
     console.log(`Solarsystem work!`);
     main.insertAdjacentHTML(`beforeend`, el);
 
-
     let resetBtn = document.querySelector(`.backToPage`);
-    resetBtn.addEventListener('click',()=> {
+    resetBtn.addEventListener('click',function(){
         location.reload()
-        console.log('resetBtn funkar');
+        console.log('resetBtn work!');
     })
 }
 
-//Enum 
 const Planets = {
         sun: 0,
         mercury: 1,
@@ -89,6 +87,7 @@ const Planets = {
         mars: 4,
         jupiter: 5,
         saturn: 6,
+        saturnRing: 6,
         uranus: 7,
         neptune: 8,
 }
@@ -115,10 +114,12 @@ buttonJuiter.addEventListener(`click`, function(){
 buttonSaturn.addEventListener(`click`, function(){
     getPlanetInfo(Planets.saturn);
 })
+buttonSaturnR.addEventListener(`click`, function(){
+    getPlanetInfo(Planets.saturnRing);
+})
 buttonUranus.addEventListener(`click`, function(){
     getPlanetInfo(Planets.uranus);
 })
 buttonNeptune.addEventListener(`click`, function(){
     getPlanetInfo(Planets.neptune);
 })
-
