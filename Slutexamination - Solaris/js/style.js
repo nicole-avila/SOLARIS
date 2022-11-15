@@ -40,7 +40,7 @@ async function getPlanetInfo(planet) {
     let Distance = solarSystem.bodies[planet].distance;
     let MaxTemp = solarSystem.bodies[planet].temp.day;
     let MinTemp = solarSystem.bodies[planet].temp.night;
-    let Moons = solarSystem.bodies[planet].moons.join(`, `);
+    let Moons = solarSystem.bodies[planet].moons;
 
     header.innerHTML = ``;
     main.innerHTML = ``;
@@ -52,14 +52,18 @@ async function getPlanetInfo(planet) {
             <h1>${Name}</h1>
             <h4>${LatinName}</h4>
             <p class="desc">${Desc}</p>
-            <p class="desc">${Desc}</p>
             <hr class="hr1">
-            <p class="circumference">OMKRETS<br>${Circumference} Km</p>
-            <p class="distance">KM FRÅN SOLEN<br>${Distance} Km</p>
-            <p class="maxTemp">MAX TEMPERATUR<br>${MaxTemp} C</p>
-            <p class="minTemp">MIN TEMPERATUR<br>${MinTemp} C</p>
-            <hr class="hr2">
-            <p class="moons">MÅNAR<br>${Moons}</p>
+            <h3 class="circumference-header">OMKRETS</h3>
+            <p class="circumference">${Circumference} Km</p>
+            <h3 class="distance-header">KM FRÅN SOLEN</h3>
+            <p class="distance">${Distance} Km</p>
+            <h3 class="maxTemp-header">MAX TEMPERATUR</h3>
+            <p class="maxTemp">${MaxTemp} C</p>
+            <h3 class="minTemp-header">MIN TEMPERATUR</h3>
+            <p class="minTemp">${MinTemp} C</p>
+            <hr class="hr2">    
+            <h3 class="moons-header">MÅNAR</h3>
+            <p class="moons">${Moons}</p>
             <footer>
             <button class="backToPage">Tillbaka</button>
             </footer>  

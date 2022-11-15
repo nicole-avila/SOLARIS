@@ -157,9 +157,8 @@ main {
     max-width: 670px;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    grid-template-rows: repeat(9, auto);
-    gap: 1.5rem .5rem;
-    
+    grid-template-rows: repeat(9, .20fr);
+    gap: 1rem .5rem;
 }
 .main-container h1 {
     text-transform: uppercase;
@@ -200,32 +199,63 @@ main {
     grid-column: 1 / 3;
     grid-row: 7 / 7;
 }
-.main-container .circumference {
-    font-family: 'Roboto Condensed';
+.circumference-header {
+    font-family: 'Secular One';
     grid-column: 1 / 2;
     grid-row: 5 / 6;
-
 }
-.main-container .distance {
+main .circumference {
+    font-family: 'Roboto Condensed';
+    align-self: flex-end;
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+.distance-header {
+    font-family: 'Secular One';
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+main .distance {
+    font-family: 'Roboto Condensed';
+    align-self: flex-end;
     grid-column: 2 / 3;
     grid-row: 5 / 6;
 
 }
-.main-container .maxTemp {
+.maxTemp-header {
+    font-family: 'Secular One';
     grid-column: 1 / 3;
     grid-row: 6 / 7;
 }
-.main-container .minTemp {
+main .maxTemp {
+    font-family: 'Roboto Condensed';
+    align-self: flex-end;
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
+}
+.minTemp-header {
+    font-family: 'Secular One';
     grid-column: 2 / 3;
     grid-row: 6 / 7;
-
 }
-.main-container .moons {
+main .minTemp {
+    font-family: 'Roboto Condensed';
+    align-self: flex-end;
+    grid-column: 2 / 3;
+    grid-row: 6 / 7;
+}
+.moons-header {
+    grid-column: 1 / 3;
+    grid-row: 8 / 9; 
+}
+main .moons {
+    font-family: 'Roboto Condensed';
+    align-self: flex-end;
     grid-column: 1 / 3;
     grid-row: 8 / 9;
 
 }
-.main-container footer {
+main footer {
     display: flex;
     justify-content: center;
     padding-top: 5rem;
