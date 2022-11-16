@@ -2,6 +2,7 @@ const URL = `https://fathomless-shelf-54969.herokuapp.com`;
 const apiKey = `solaris-vKkkQHqQboi7c6JF`;
 const main = document.querySelector(`main`);
 const header = document.querySelector(`header`);
+const footer = document.querySelector(`footer`);
 
 let buttonSun = document.querySelector(`.sun`);
 let buttonMercury = document.querySelector(`.mercury`);
@@ -42,10 +43,9 @@ async function getPlanetInfo(planet) {
     
     header.innerHTML = ``;
     main.innerHTML = ``;
+    footer.innerHTML = ``;
     el = `
-    <figure class="starOne"></figure> <figure class="starTwo"></figure> <figure class="starThree"></figure> <figure class="starFour"></figure> <figure class="starFive"></figure> <figure class="starSix"></figure> <figure class="starSeven"></figure> <figure class="starEight"></figure> <figure class="starNine"></figure> <figure class="starTen"></figure> <figure class="starEleven"></figure> <figure class="starTwelve"></figure>
-    <figure class="starThirteen"></figure> <figure class="starFourteen"></figure> <figure class="starFifteen"></figure> <figure class="starSixteen"></figure> <figure class="starSeventeen"></figure> <figure class="starEighteen"></figure> <figure class="starNineteen"></figure> <figure class="starTwenty"></figure> <figure class="starTwentyOne"></figure> <figure class="starTwentyTwo"></figure> <figure class="starTwetyThree"></figure> <figure class="starTwentyFour"></figure>
-    <figure class="planetAside-one"></figure>
+        <figure class="planetAside-one"></figure>
         <figure class="planetAside-two"></figure>
         <figure class="planetAside-three"></figure>
         <main>
@@ -67,7 +67,10 @@ async function getPlanetInfo(planet) {
             <footer>
             <button class="backToPage">Tillbaka</button>
             </footer>  
-        </main> 
+        </main>
+        <figure class="starOne"></figure> <figure class="starTwo"></figure> <figure class="starThree"></figure> <figure class="starFour"></figure> <figure class="starFive"></figure> <figure class="starSix"></figure> <figure class="starSeven"></figure> <figure class="starEight"></figure> <figure class="starNine"></figure> <figure class="starTen"></figure> <figure class="starEleven"></figure> <figure class="starTwelve"></figure>
+        <figure class="starThirteen"></figure> <figure class="starFourteen"></figure> <figure class="starFifteen"></figure> <figure class="starSixteen"></figure> <figure class="starSeventeen"></figure> <figure class="starEighteen"></figure> <figure class="starNineteen"></figure> <figure class="starTwenty"></figure> <figure class="starTwentyOne"></figure> <figure class="starTwentyTwo"></figure> <figure class="starTwetyThree"></figure> <figure class="starTwentyFour"></figure>
+        <figure class="starTwentyFive"></figure> <figure class="starTwentySix"></figure> <figure class="starTwentySeven"></figure> <figure class="starTwentyEight"></figure> <figure class="starTwentyNine"></figure> <figure class="Thirty"></figure>
             `
     console.log(`Solarsystem work!`);
     main.insertAdjacentHTML(`beforeend`, el);
