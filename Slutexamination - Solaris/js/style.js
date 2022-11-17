@@ -14,10 +14,8 @@ let buttonSaturn = document.querySelector(`.saturn`);
 let buttonSaturnR = document.querySelector(`.saturnRing`);
 let buttonUranus = document.querySelector(`.uranus`);
 let buttonNeptune = document.querySelector(`.neptune`);
-//let asidePlanet = document.querySelector(`.one`)
 let solarSystem = ``;
 let el = ``;
-
 
 async function getKey() {
     const resp = await fetch(`${URL}/keys`, { method: 'POST' });
@@ -30,7 +28,6 @@ async function getPlanetInfo(planet) {
     const resp = await fetch(`${URL}/bodies`, { method: 'GET', headers: {'x-zocom': key} });
 
     solarSystem = await resp.json();
-    console.log(solarSystem);
 
     let Name = solarSystem.bodies[planet].name;
     let LatinName = solarSystem.bodies[planet].latinName; 
@@ -50,38 +47,35 @@ async function getPlanetInfo(planet) {
         <figure class="planetAside-three"></figure>
         <main>
             <h1>${Name}</h1>
-            <h4>${LatinName}</h4>
+            <h3>${LatinName}</h3>
             <p class="desc">${Desc}</p>
                 <hr class="hr1">
-            <h3 class="circumference-header">OMKRETS</h3>
+            <h4 class="circumference-header">OMKRETS</h4>
                 <p class="circumference">${Circumference} Km</p>
-            <h3 class="distance-header">KM FRÅN SOLEN</h3>
+            <h4 class="distance-header">KM FRÅN SOLEN</h4>
                 <p class="distance">${Distance} Km</p>
-            <h3 class="maxTemp-header">MAX TEMPERATUR</h3>
+            <h4 class="maxTemp-header">MAX TEMPERATUR</h4>
                 <p class="maxTemp">${MaxTemp} C</p>
-            <h3 class="minTemp-header">MIN TEMPERATUR</h3>
+            <h4 class="minTemp-header">MIN TEMPERATUR</h4>
                 <p class="minTemp">${MinTemp} C</p>
                 <hr class="hr2">   
-            <h3 class="moons-header">MÅNAR</h3>
+            <h4 class="moons-header">MÅNAR</h4>
                 <p class="moons">${Moons}</p>
-            <footer>
-            <button class="backToPage">Tillbaka</button>
-            </footer>  
+        <footer><button class="backToPage">Tillbaka</button></footer>  
         </main>
         <figure class="starOne"></figure> <figure class="starTwo"></figure> <figure class="starThree"></figure> <figure class="starFour"></figure> <figure class="starFive"></figure> <figure class="starSix"></figure> <figure class="starSeven"></figure> <figure class="starEight"></figure> <figure class="starNine"></figure> <figure class="starTen"></figure> <figure class="starEleven"></figure> <figure class="starTwelve"></figure>
         <figure class="starThirteen"></figure> <figure class="starFourteen"></figure> <figure class="starFifteen"></figure> <figure class="starSixteen"></figure> <figure class="starSeventeen"></figure> <figure class="starEighteen"></figure> <figure class="starNineteen"></figure> <figure class="starTwenty"></figure> <figure class="starTwentyOne"></figure> <figure class="starTwentyTwo"></figure> <figure class="starTwetyThree"></figure> <figure class="starTwentyFour"></figure>
         <figure class="starTwentyFive"></figure> <figure class="starTwentySix"></figure> <figure class="starTwentySeven"></figure> <figure class="starTwentyEight"></figure> <figure class="starTwentyNine"></figure> <figure class="Thirty"></figure>
             `
-    console.log(`Solarsystem work!`);
+    console.log(solarSystem);
     main.insertAdjacentHTML(`beforeend`, el);
 
     let resetBtn = document.querySelector(`.backToPage`);
     resetBtn.addEventListener('click',function(){
         location.reload()
-        console.log('resetBtn work!');
+        console.log(resetBtn);
     })
 }
-
 const Planets = {
         sun: 0,
         mercury: 1,
@@ -94,10 +88,9 @@ const Planets = {
         uranus: 7,
         neptune: 8,
 }
-
 buttonSun.addEventListener(`click`, function(){
     getPlanetInfo(Planets.sun);
-    console.log(`sol knappen funkar!`);
+    console.log(buttonSun);
 })
 buttonMercury.addEventListener(`click`, function(){
     getPlanetInfo(Planets.mercury);

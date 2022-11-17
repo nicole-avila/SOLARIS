@@ -13,37 +13,36 @@ h1 {
     font-family: 'Secular One';
     font-size: 60px;
     color: #FFFFFF;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: .06em;
     display: flex;
     justify-content: flex-end;
     align-self: flex-end;
     padding-top: 6rem;
     padding-right: 5rem;
+}
+h2 {
+    font-family: 'Lora';
+    color: #FFD029;
+    font-size: 24px;
     font-weight: 400;
     line-height: 100%;
-    letter-spacing: .09em;
-}
-h4 {
-    font-family: 'Lora';
-    color: rgb(235, 192, 39);
-    font-size: 24px;
+    letter-spacing: .5em;
     display: flex;
     justify-content: flex-end;
     align-self: flex-end;
-    padding-top: 1rem;
-    padding-right: 6rem;
-    font-weight: 400;
-    line-height: 100%;
+    padding: 1rem 4.5rem 11rem 4em;
 }
 .solaris {
     max-width: 100%;
-    max-height: 20vh;
-    padding-top: 10rem;
-    padding-left: 6rem;
-    margin: 0;
+    /* max-height: 20vh; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding-left: 6rem;
+    margin: 0;
 }
 .sun, .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune {
     border-style: none;
@@ -92,8 +91,8 @@ h4 {
 .saturnRing {
     background: rgba(255, 255, 255, 0.4);
     transform: rotate(-30deg);
-    width: 218px;
     height: 5.5px;
+    width: 218px;
     border-radius: 50%;
     margin: 0;
     margin-left: -40px;
@@ -116,36 +115,44 @@ footer img {
 
 /*Second page*/
 main {
-    max-width: 680px;
+    max-width: 690px;
     margin: auto;
     color: #FFFFFF;
     font-family: 'Secular One';
     font-weight: 400;
     font-size: 18px;
-    /* Line-height: 100% */ 
     letter-spacing: 0.09em;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    grid-template-rows: 70px 30px auto 8px 50px 50px 8px 120px 70px;
-    gap: 1rem .5rem;
+    grid-template-rows: 70px 40px auto auto 40px 40px 40px 40px 40px auto 40px;
+    padding-top: 5rem;
+    gap: .5rem;
+    
 }
-main h1 {
+main h1, main h3 {
     text-transform: uppercase;
     justify-content: flex-start;
+} 
+.circumference-header, .distance-header, .maxTemp-header, .minTemp-header, .moons-header {
+    font-family: 'Secular One';
+    align-self: flex-end;
+}
+main h3, main .desc, main .circumference, main .distance, main .maxTemp, main .minTemp, main .moons {
+    font-family: 'Roboto Condensed';
+    align-self: flex-start;
+}
+main h1 {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
-main h4 {
-    text-transform: uppercase;
+main h3 {
+    color: #FFD029;
     letter-spacing: 0.6em;
-    justify-content: flex-start;
-    align-self: flex-start;
     padding: 0;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 }
 main .desc {
-    font-family: 'Roboto Condensed';
     font-weight: lighter;
     font-size: 18px;
     line-height: 170%;
@@ -160,171 +167,149 @@ main .desc {
     grid-column: 1 / 3;
     grid-row: 4 / 4;
 }
+.circumference-header {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+main .circumference {
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+}
+.distance-header {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+main .distance {
+    grid-column: 2 / 3;
+    grid-row: 6 / 7;
+}
+.maxTemp-header {
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+}
+main .maxTemp {
+    grid-column: 1 / 2;
+    grid-row: 8 / 9;
+}
+.minTemp-header {
+    grid-column: 2 / 3;
+    grid-row: 7 / 8;
+}
+main .minTemp {
+    grid-column: 2 / 3;
+    grid-row: 8 / 9;
+}
 .hr2 {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-top: none;
     border-right: none;
     border-left: none;
     grid-column: 1 / 3;
-    grid-row: 7 / 7;
-}
-.circumference-header {
-    font-family: 'Secular One';
-    grid-column: 1 / 2;
-    grid-row: 5 / 6;
-}
-main .circumference {
-    font-family: 'Roboto Condensed';
-    align-self: flex-end;
-    grid-column: 1 / 2;
-    grid-row: 5 / 6;
-}
-.distance-header {
-    font-family: 'Secular One';
-    grid-column: 2 / 3;
-    grid-row: 5 / 6;
-}
-main .distance {
-    font-family: 'Roboto Condensed';
-    align-self: flex-end;
-    grid-column: 2 / 3;
-    grid-row: 5 / 6;
-}
-.maxTemp-header {
-    font-family: 'Secular One';
-    grid-column: 1 / 3;
-    grid-row: 6 / 7;
-}
-main .maxTemp {
-    font-family: 'Roboto Condensed';
-    align-self: flex-end;
-    grid-column: 1 / 3;
-    grid-row: 6 / 7;
-}
-.minTemp-header {
-    font-family: 'Secular One';
-    grid-column: 2 / 3;
-    grid-row: 6 / 7;
-}
-main .minTemp {
-    font-family: 'Roboto Condensed';
-    align-self: flex-end;
-    grid-column: 2 / 3;
-    grid-row: 6 / 7;
+    grid-row: 8 / 8;
 }
 .moons-header {
-    grid-column: 1 / 3;
-    grid-row: 8 / 9; 
+    grid-column: 1 / 2;
+    grid-row: 9 / 10;
 }
 main .moons {
-    font-family: 'Roboto Condensed';
-    align-self: flex-end;
+    line-height: 150%;
     grid-column: 1 / 3;
-    grid-row: 8 / 9;
+    grid-row: 10 / 11;
 }
 main footer {
     display: flex;
     justify-content: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
     grid-column: 1 / 3;
-    grid-row: 9 / 10;
+    grid-row: 11 / 12;
+    margin: auto;
 }
 .backToPage {
     font-family:'Roboto Condensed';
     background-color: #428dd447;
     color: #FFFFFF;
     letter-spacing: 0.09em;
-    padding: .5rem 1rem ;
     border-radius: .9rem;
+    padding: .5rem 1rem;
     border-style: none;
     cursor: pointer;
 }
 
 /* Second page - Planet aside */
-.planetAside-one {
+.planetAside-one, .planetAside-two, .planetAside-three {
     position: absolute;
+    border-radius: 50%;
+    border-style: none;
+}
+.planetAside-one {
     background-color: #428ED4;
     box-shadow: 0px 0px 250px rgba(255, 208, 41, 0.2);
     height: 1278px;
     width: 1278px;
     top: -189px;
     left: -1160px;
-    border-radius: 50%;
-    border-style: none;
 }
 .planetAside-two {
-    position: absolute;
     background-color: rgba(66, 142, 213, 0.1);
     width: 1340px;
     height: 1340px;
     left: -1170px;
     top: -222px;
-    border-radius: 50%;
-    border-style: none;
 }
 .planetAside-three {
-    position: absolute;
     background: rgba(66, 142, 213, 0.06);
     width: 1404px;
     height: 1404px;
     left: -1184px;
     top: -254px;
-    border-radius: 50%;
-    border-style: none;
 }
 
 /* Second page - All stars in the background */
-.starOne, .starTwo,  .starThree, .starFour, .starFive, .starSix, .starSeven, .starEight, .starNine, .starTen, .starEleven {
+.starOne, .starTwo,  .starThree, .starFour, .starFive, .starSix, .starSeven, .starEight, .starNine, .starTen, .starEleven, .starTwelve,.starThirteen, .starFourteen, .starFifteen, .starSixteen, .starSeventeen, .starEighteen, .starNineteen, .starTwenty, .starTwentyOne, .starTwentyTwo, .starTwentyThree, .starTwentyFour, .starTwentyFive, .starTwentySix, .starTwentySeven, .starTwentyEight, .starTwentyNine, .starThirty {
     position: absolute;
+    background: #FFFFFF;
+    opacity: 0.3;
+    transform: matrix(0.38, 0.93, 0.93, -0.38, 0, 0);
+}
+.starOne, .starTwo,  .starThree, .starFour, .starFive, .starSix, .starSeven, .starEight, .starNine, .starTen, .starEleven {
     width: 3px;
     height: 3px;
-    background: #FFFFFF;
-    opacity: 0.3;
-    transform: matrix(0.38, 0.93, 0.93, -0.38, 0, 0);
 }
 .starTwelve,.starThirteen, .starFourteen, .starFifteen, .starSixteen, .starSeventeen, .starEighteen {
-    position: absolute;
     width: 5.8px;
     height: 5.8px;
-    background: #FFFFFF;
-    opacity: 0.3;
-    transform: matrix(0.38, 0.93, 0.93, -0.38, 0, 0);
 }
 .starNineteen, .starTwenty, .starTwentyOne, .starTwentyTwo, .starTwentyThree, .starTwentyFour, .starTwentyFive, .starTwentySix, .starTwentySeven, .starTwentyEight, .starTwentyNine, .starThirty {
-    position: absolute;
     width: 6px;
     height: 6px;
-    background: #FFFFFF;
-    opacity: 0.3;
-    transform: matrix(0.38, 0.93, 0.93, -0.38, 0, 0);
 }
 .starOne {
-    left: 263px;
-    top: 474px;
+    left: 400px;
+    top: 180px;
 }
 .starTwo {
     left: 339px;
-top: 509px;
+    top: 509px;
 }
 .starThree {
     left: 275px;
-top: 709px;
+    top: 709px;
 }
 .starFour {
     left: 275px;
-    top: 709p
+    top: 709px;
 }
 .starFive{
     left: 487px;
-    top: 808px;
+    top: 900px;
 }
 .starSix{
     left: 579px;
     top: 625px;
 }
 .starSeven {
-    left: 738px;
-    top: 450px;
+    left: 250px;
+    top: 120px;
 }
 .starEight {
     left: 1079px;
@@ -336,22 +321,22 @@ top: 709px;
 }
 .starTen {
     left: 1027px;
-    top: 207px;
+    top: 250px;
 }
 .starEleven {
     left: 800px;
     top: 98px;
 }
 .starTwelve {
-    left: 255.4px;
-    top: 791.21px;   
+    left: 200px;
+    top: 800px;   
 }
 .starThirteen {
     left: 527.75px;
     top: 726.49px;   
 }
 .starFourteen {
-    left: 600px;
+    left: 640px;
     top: 490px; 
 } 
 .starFifteen {
@@ -359,7 +344,7 @@ top: 709px;
     top: 400px;   
 }
 .starSixteen {
-    left: 1200px;
+    left: 120px;
     top: 130px;   
 }
 .starSeventeen {
@@ -367,12 +352,12 @@ top: 709px;
 top: 643px;   
 }
 .starEighteen{
-    left: 1300px;
-    top: 598.78px;   
+    left: 800px;
+    top: 1000px;   
 }
 .starNineteen {
     left: 1228px;
-    top: 800px;
+    top: 880px;
 }
 .starTwenty {
     left: 1300px;
@@ -401,25 +386,143 @@ top: 643px;
 .starTwentySix {
     left: 1530px;
     top: 280px;
-
 }
 .starTwentySeven {
     left: 1297px;
     top: 204px;
-
 }
 .starTwentyEight {
     left: 911px;
     top: 643px;
-
 }
 .starTwentyNine {
     left: 967px;
     top: 764px;
-
 }
 .starThirty {
     left: 1384px;
     top: 833px;
+}
+@media only screen and (max-width: 1000px)  {
 
+        h1 {
+            font-size: 5vh;
+            padding-right: 2rem;
+        }
+        h2 {
+            font-size: 3vh;
+            padding-right: 3rem;
+        }
+        .solaris {
+            padding-left: 4.5rem;
+        }
+        .sun {
+            top: -200px;
+            left: -1210px;
+        }
+        .jupiter {
+            height: 90px;
+            width: 90px;
+        }
+        .saturn {
+            height: 90px;
+            width: 90px;
+
+        }
+        .saturnRing {
+            width: 120px;
+            margin-left: -15px;
+        }
+        .uranus {
+            width: 50px;
+            height: 50px;
+        }
+        .neptune {
+            width: 50px;
+            height: 50px;
+        }
+        footer img {
+            max-width: 15%;
+        }
+        /* Second page */
+        main {
+            margin: auto 0;
+            grid-template-rows: repeat(11, .2fr);
+        }
+        main h1 {
+            font-size: 4vh;
+        }
+        main h3, .desc {
+            font-size: 2vh;
+        }
+        .circumference-header, .distance-header, .maxTemp-header, .minTemp-header, .moons-header {
+            font-size: 1.5vh;
+        }
+        main .desc, main .circumference, main .distance, main .maxTemp, main .minTemp, main .moons {
+            font-size: 1.5vh;
+        }
+        .circumference-header {
+            grid-column: 1 / 2;
+            grid-row: 5 / 6;
+        }
+        main .circumference {
+            grid-column: 1 / 2;
+            grid-row: 6 / 7;
+        }
+        .distance-header {
+            grid-column: 2 / 3;
+            grid-row: 5 / 6;
+        }
+        main .distance {
+            grid-column: 2 / 3;
+            grid-row: 6 / 7;
+        }
+        .maxTemp-header {
+            grid-column: 1 / 2;
+            grid-row: 7 / 8;
+        }
+        main .maxTemp {
+            grid-column: 1 / 2;
+            grid-row: 8 / 9;
+        }
+        .minTemp-header {
+            grid-column: 2 / 3;
+            grid-row: 7 / 8;
+        }
+        main .minTemp {
+            grid-column: 2 / 3;
+            grid-row: 8 / 9;
+        }
+       .hr2 {
+        grid-column: 1 / 3;
+        grid-row: 8 / 8;
+        }
+        .moons-header {
+            grid-column: 1 / 2;
+            grid-row: 9 / 10; 
+        }
+        main .moons {
+            grid-column: 1 / 3;
+            grid-row: 10 / 11;
+        }
+        main footer {
+            display: flex;
+            justify-content: center;
+            padding-top: 2rem;
+            grid-column: 1 / 3;
+            grid-row: 11 / 12;
+        }
+        .backToPage {
+            font-family:'Roboto Condensed';
+            background-color: #428dd447;
+            color: #FFFFFF;
+            letter-spacing: 0.09em;
+            padding: .5rem 1rem ;
+            border-radius: .9rem;
+            border-style: none;
+            cursor: pointer;
+        }
+        .planetAside-one, .planetAside-two, .planetAside-three {
+            display: none;
+        }
 }
