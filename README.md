@@ -74,22 +74,3 @@ let resp = await fetch("https://fathomless-shelf-54969.herokuapp.com/bodies", {
     moons: []
 }
 ```
-
-## Betygskriterier
-
-**Godkänt**
-
-- Att det ser ut enligt skiss.
-- Att API:et används.
-- Sidan fungerar med inga fel i konsolen i developer tools.
-- Vettiga namn på variabler etc på engelska.
-
-**Väl godkänt**
-
-- Allt i godkänt.
-- Att din kod är uppdelad i tydliga funktioner med vettiga namn.
-- Inga hårdkodade API-nycklar utan det ska alltid göras ett anrop för att få en API-nyckel först, innan varje anrop.
-
-## Inlämning
-
-Inlämning sker senast _Fredag 18 nov 12.00_ via en länk till ditt githubrepo på Learnpoint.
